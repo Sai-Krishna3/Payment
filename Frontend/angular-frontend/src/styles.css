@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+   text-size-adjust: 100px; 
+   background-color:aliceblue;
+   
+   
+    
+  }
+
+.navbar-nav{
+    font-size: 30px;
+
+    
+}

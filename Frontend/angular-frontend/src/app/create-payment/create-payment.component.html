@@ -1,0 +1,61 @@
+
+<div class="col-md-6 offset-md-3">
+
+    <h3>  Add payment </h3>
+
+    <br>
+
+    <form #e="ngForm" (ngSubmit) = "onSubmit()">
+
+
+
+      
+        <br>
+        
+
+
+
+        <div class="form-group">
+
+            <label>  Payment Date</label>
+        
+            
+          <input type="date" class ="form-control" id = "name" name = "name"  
+
+            [(ngModel)] = "payment.transactionDate" 
+            required #transactionDate="ngModel" [class.is-invalid]="transactionDate.invalid && transactionDate.touched"/>
+                        
+                       
+                        <small class="text-danger"  [class.d-none]="transactionDate.valid || transactionDate.untouched"> please select the date </small>
+
+        </div>
+
+        <br>
+
+   
+
+        <div class="form-group">
+
+            <label>Amount to paid</label>
+
+            <input type="number" class ="form-control" id = "cost"
+
+                [(ngModel)] = "payment.amountPaid" name = "cost"
+                
+                required #amountPaid="ngModel" [class.is-invalid]="amountPaid.invalid && amountPaid.touched"/>
+
+                       
+
+                       
+
+                <small class="text-danger"  [class.d-none]="amountPaid.valid || amountPaid.untouched">plase enter the amount</small>
+        </div>
+
+        <br>
+
+        <button class = "btn btn-success" type ="submit">pay</button>
+
+</form>
+
+</div>
+

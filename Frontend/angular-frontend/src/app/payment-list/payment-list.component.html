@@ -1,0 +1,33 @@
+
+
+<h2> Payment list</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th (click)="sorttrasanctionId()"> payment Id</th>
+            <th (click)="sorttrasanctiondate()">
+                payment date
+            </th>
+            <th (click)="sortcost()">cost</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor =" let payment of payments  | paginate:{itemsPerPage:5,currentPage:p};">
+            <td>{{payment.transactionId}}</td>
+            <td>{{payment.transactionDate}}</td>
+            <td>{{payment.amountPaid}}</td>
+            <td>
+
+            
+
+                <button (click) = "deletePayment(payment.transactionId)" class = "btn btn-outline-danger"> cancel payment</button>  
+    
+    
+    
+            </td>
+        </tr>
+        
+    </tbody>
+    <pagination-controls (pageChange)="p=$event"></pagination-controls>
+</table>
